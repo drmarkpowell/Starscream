@@ -13,5 +13,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/*.swift'
   s.requires_arc = 'true'
   s.libraries    = 'z'
-  s.xcconfig     = {'HEADER_SEARCH_PATHS'=>'$(SDKROOT)/usr/include/zlib', 'OTHER_LDFLAGS'=>'-lz'}
+  s.preserve_paths = 'Source/**/*'
+  s.pod_target_xcconfig = {
+    'SWIFT_INCLUDE_PATHS'           => '$(PODS_ROOT)/Source/zlib'
+  }
 end
